@@ -21,7 +21,7 @@ namespace Microsoft.Azure.Management.ANF.Samples
         // Please NOTE: Resource Group and VNETs need to be created prior to run this code
         //----------------------------------------------------------------------------------------------------------------------
 
-        // Subscription - Change SubId below
+        // Subscription ID
         const string subscriptionId = "<Subscription ID>";
 
         const string resourceGroupName = "<Resource Group Name>";
@@ -47,7 +47,7 @@ namespace Microsoft.Azure.Management.ANF.Samples
         private static ServiceClientCredentials Credentials { get; set; }
 
         /// <summary>
-        /// Sample console application that changes a volume from one Capacity Pool to another in different service level tier
+        /// Sample console application that create a Dual-Protocol volume
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
