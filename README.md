@@ -21,7 +21,7 @@ In this sample application we perform the following operations:
 * Deletions
     * Dual-Protocol Volume
     * Capacity Pool
-    * ANF Account
+    * ANF Account 
 
 >Note: The cleanup execution is disabled by default. If you want to run this end to end with the cleanup, please
 >change value of boolean variable 'shouldCleanup' in program.cs
