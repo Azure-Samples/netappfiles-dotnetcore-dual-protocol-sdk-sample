@@ -24,7 +24,7 @@ In this sample application we perform the following operations:
     * ANF Account 
 
 >Note: The cleanup execution is disabled by default. If you want to run this end to end with the cleanup, please
->change value of boolean variable 'shouldCleanup' in program.cs
+>change value of boolean variable 'shouldCleanup' in program.cs 
 
 If you don't already have a Microsoft Azure subscription, you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212).
 
@@ -36,7 +36,7 @@ If you don't already have a Microsoft Azure subscription, you can get a FREE tri
 1. Have the Root CA certificate used by the AD Domain Controller and the Windows clients exported as Base64 encoded X.509 certificate file.
 If unsure, steps 2-3 in [this](https://docs.microsoft.com/en-us/azure/azure-netapp-files/create-volumes-dual-protocol#upload-active-directory-certificate-authority-public-root-certificate) document shows how to export the certificate.
 Make sure this file is stored at the root of the project.
-1. Resource Group created
+1. Resource Group created.
 1. Virtual Network with a delegated subnet to Microsoft.Netapp/volumes resource. For more information, please refer to [Guidelines for Azure NetApp Files network planning](https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-network-topologies)
 1. For this sample console appplication work, we are using service principal based  authenticate, follow these steps in order to setup authentication:
     1. Within an [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart) session, make sure you're logged on at the subscription where you want to be associated with the service principal by default:
@@ -52,7 +52,7 @@ Make sure this file is stored at the root of the project.
         az ad sp create-for-rbac --sdk-auth
         ```
 
-        >Note: this command will automatically assign RBAC contributor role to the service principal at subscription level, you can narrow down the scope to the specific resource group where your tests will create the resources.
+        >Note: this command will automatically assign RBAC contributor role to the service principal at subscription level, you can narrow down the scope to the specific resource group where your tests will create the resources. 
 
     1. Copy the output content and paste it in a file called azureauth.json, secure it with file system permissions and save it outside the tree related of your 	local git repo folder so the file doesn't get commited. 
     1. Set an environment variable pointing to the file path you just created, here is an example with Powershell and bash:
