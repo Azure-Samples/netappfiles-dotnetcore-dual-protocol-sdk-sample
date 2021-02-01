@@ -12,7 +12,7 @@ description: "This project demonstrates how to create a dual-protocol Volume for
 
 This project demonstrates how to create a dual-protocol Volume (uses both SMB/NFSv3 protocol types) for Microsoft.NetApp resource provider using .NETCore SDK.
 
-In this sample application we perform the following operations:
+In this sample application we perform the following operations: 
 
 * Creations
     * ANF Account
@@ -30,7 +30,7 @@ If you don't already have a Microsoft Azure subscription, you can get a FREE tri
 
 ## Prerequisites
 
-1. Azure Subscription
+1. Azure Subscription.
 1. Subscription needs to be enabled for Azure NetApp Files. For more information, please refer to [this](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register#waitlist) document.
 1. Make sure you comply with the dual-protocol items described [here](https://docs.microsoft.com/en-us/azure/azure-netapp-files/create-volumes-dual-protocol#considerations) before you proceed.
 1. Have the Root CA certificate used by the AD Domain Controller and the Windows clients exported as Base64 encoded X.509 certificate file.
@@ -42,7 +42,7 @@ Make sure this file is stored at the root of the project.
     1. Within an [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart) session, make sure you're logged on at the subscription where you want to be associated with the service principal by default:
         ```bash
         az account show
-        ```
+        ``` 
         If this is not the correct subscription, use             
           ```bash
          az account set -s <subscription name or id>  
