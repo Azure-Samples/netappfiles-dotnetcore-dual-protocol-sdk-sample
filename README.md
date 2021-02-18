@@ -67,7 +67,7 @@ Make sure this file is stored at the root of the project.
 
         >Note: for more information on service principal authentication with dotnet, please refer to [Authenticate with the Azure Libraries for .NET](https://docs.microsoft.com/en-us/dotnet/azure/dotnet-sdk-azure-authenticate?view=azure-dotnet)
 
-# What is netappfiles-dontnetcore-pool-change-sdk-sample doing? 
+# What is netappfiles-dontnetcore-dual-protocol-sdk-sample doing? 
 
 This sample is dedicated to demonstrate how to create a dual-protocol Volume using an ANF Account name in Azure NetApp Files.
 Dual-protocol volumes use both SMB and NFS protocol types.
