@@ -24,18 +24,19 @@ namespace Microsoft.Azure.Management.ANF.Samples
         // Subscription ID
         const string subscriptionId = "<Subscription ID>";
 
+        // Azure NetApp Files resources
         const string resourceGroupName = "<Resource Group Name>";
         const string location = "westus";
-        const string subnetId = "<Subnet ID>";
-        const string anfAccountName = "anftestaccount";
-        const string capacityPoolName = "anfprimarypool";
+        const string subnetId = "<Subnet ID>";        
+        const string anfAccountName = "anfaccount01";
+        const string capacityPoolName = "anfpool01";
         const string capacityPoolServiceLevel = "Standard";
         const long capacitypoolSize = 4398046511104;  // 4TiB which is minimum size
-        const string anfVolumeName = "anftestvolume";
+        const string anfVolumeName = "anfvolume01";
         const long volumeSize = 107374182400;  // 100GiB - volume minimum size    
 
+        // Domain controller 
         const string domainJoinUsername = "<Domain Join Username>";
-        const string domainJoinPassword = "<Domain Join Password>";
         const string dnsList = "10.0.0.4,10.0.0.5"; // please note that this is a comma-seperated string
         const string adFQDN = "testdomain.local";
         const string smbServerNamePrefix = "pmcdns";
@@ -66,6 +67,16 @@ namespace Microsoft.Azure.Management.ANF.Samples
 
         private static async Task CreateANFAsync()
         {
+            Console.WriteLine("Please type Active Directory's user password that will domain join ANF's SMB server and press [ENTER]:");
+
+            string DomainJoinUserPassword = Utils.GetConsolePassword();
+
+            // Basic validation
+            if (string.IsNullOrWhiteSpace(DomainJoinUserPassword))
+            {
+                throw new Exception("Invalid password, password cannot be null or empty string");
+            } 
+
             //----------------------------------------------------------------------------------------
             // Authenticating using service principal, refer to README.md file for requirement details
             //----------------------------------------------------------------------------------------
@@ -98,7 +109,7 @@ namespace Microsoft.Azure.Management.ANF.Samples
                 location,
                 anfAccountName,
                 domainJoinUsername,
-                domainJoinPassword,
+                DomainJoinUserPassword,
                 dnsList,
                 adFQDN,
                 smbServerNamePrefix,

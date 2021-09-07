@@ -8,6 +8,7 @@ namespace Microsoft.Azure.Management.ANF.Samples.Common
 
     using System;
     using System.IO;
+    using System.Text;
 
     /// <summary>
     /// Contains public methods to get configuration settings, to initiate authentication, output error results, etc.
@@ -52,6 +53,41 @@ namespace Microsoft.Azure.Management.ANF.Samples.Common
         public static string GetFileContent(string filePath)
         {
             return File.ReadAllText(filePath);
+        }
+
+        /// <summary>
+        /// Simple method to avoid displaying a password.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks>Sample code from https://gist.github.com/huobazi/1039424 </remarks>
+        public static string GetConsolePassword()
+        {
+            StringBuilder sb = new StringBuilder();
+            while (true)
+            {
+                ConsoleKeyInfo cki = Console.ReadKey(true);
+                if (cki.Key == ConsoleKey.Enter)
+                {
+                    Console.WriteLine();
+                    break;
+                }
+
+                if (cki.Key == ConsoleKey.Backspace)
+                {
+                    if (sb.Length > 0)
+                    {
+                        Console.Write("\b\0\b");
+                        sb.Length--;
+                    }
+
+                    continue;
+                }
+
+                Console.Write('*');
+                sb.Append(cki.KeyChar);
+            }
+
+            return sb.ToString();
         }
     }
 }
