@@ -69,10 +69,10 @@ namespace Microsoft.Azure.Management.ANF.Samples
         {
             Console.WriteLine("Please type Active Directory's user password that will domain join ANF's SMB server and press [ENTER]:");
 
-            string DomainJoinUserPassword = Utils.GetConsolePassword();
+            string domainJoinUserPassword = Utils.GetConsolePassword();
 
             // Basic validation
-            if (string.IsNullOrWhiteSpace(DomainJoinUserPassword))
+            if (string.IsNullOrWhiteSpace(domainJoinUserPassword))
             {
                 throw new Exception("Invalid password, password cannot be null or empty string");
             } 
@@ -109,7 +109,7 @@ namespace Microsoft.Azure.Management.ANF.Samples
                 location,
                 anfAccountName,
                 domainJoinUsername,
-                DomainJoinUserPassword,
+                domainJoinUserPassword,
                 dnsList,
                 adFQDN,
                 smbServerNamePrefix,
